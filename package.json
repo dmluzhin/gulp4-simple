@@ -1,0 +1,37 @@
+{
+  "name": "gulp4-simple",
+  "version": "1.0.0",
+  "description": "Простая сборка на Gulp",
+  "main": "index.js",
+  "dependencies": {
+    "del": "^5.1.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmluzhin/gulp4-simple.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmluzhin/gulp4-simple/issues"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
+  "homepage": "https://github.com/dmluzhin/gulp4-simple#readme"
+}
