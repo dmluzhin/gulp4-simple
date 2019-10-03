@@ -1,0 +1,1 @@
+{"version":3,"file":"main.css","sources":["main.scss"],"sourcesContent":["a {\r\n  color: red;\r\n  font-size: 15px;\r\n  &:hover {\r\n    color: blue;\r\n  }\r\n}"],"names":[],"mappings":"AAAA,AAAA,CAAC,CAAC;EACA,KAAK,EAAE,GAAG;EACV,SAAS,EAAE,IAAI,GAIhB;EAND,AAGE,CAHD,AAGE,MAAM,CAAC;IACN,KAAK,EAAE,IAAI,GACZ"}

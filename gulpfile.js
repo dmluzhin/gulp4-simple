@@ -1,15 +1,22 @@
 //Подключаем gulp модули
 const gulp = require('gulp');
 const concat = require('gulp-concat');
+const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
+const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 
-const cssFiles = [
+/*const cssFiles = [
 	'./src/css/main.css',
 	'./src/css/media.css'
+];*/
+
+const cssFiles = [
+	'./src/css/main.scss',
+	'./src/css/color.scss'
 ];
 
 const jsFiles = [
@@ -20,20 +27,19 @@ const jsFiles = [
 
 //Для CSS
 function styles() {
-
 	//Шаблон для поиска файлов CSS
 	return gulp.src(cssFiles)
+			.pipe(sourcemaps.init())
+			.pipe(sass())
 			.pipe(concat('style.css'))
-
 			//Автопрефиксер
 			.pipe(autoprefixer({
 				cascade: false
 			}))
-
 			.pipe(cleanCSS({
 				level: 2
 			}))
-
+			.pipe(sourcemaps.write('./'))
 			//Вывод CSS в build
 			.pipe(gulp.dest('./build/css'))
 			.pipe(browserSync.stream());
@@ -61,9 +67,11 @@ function watch() {
 		}
 	});
 	gulp.watch('./src/css/**/*.css', styles)
+	gulp.watch('./src/css/**/*.scss', styles)
 	gulp.watch('./src/js/**/*.js', scripts)
 	gulp.watch("./*.html").on('change', browserSync.reload)
 }
+
 //Чистка
 function clean() {
 	return del(['build/*'])
